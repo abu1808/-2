@@ -1,0 +1,10 @@
+
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+    <h2>Ваш заказ оформлен!</h2>
+    <p>Спасибо за покупку, {{ order.user.username }}!</p>
+    <p>Ваш заказ: {{ order.id }}</p>
+{% endblock %}

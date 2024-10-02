@@ -1,0 +1,15 @@
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+    <h2>Корзина</h2>
+    <ul>
+        {% for item in cart.items.all %}
+            <li>{{ item.product.name }} - {{ item.quantity }} шт.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'store:checkout' %}">Оформить заказ</a>
+
+{% endblock %}
+

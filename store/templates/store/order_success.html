@@ -1,0 +1,13 @@
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+
+{% block title %}Успешный заказ{% endblock %}
+
+{% block content %}
+<h1>Ваш заказ был успешно оформлен!</h1>
+<p>Спасибо за покупку. Мы скоро свяжемся с вами.</p>
+<a href="{% url 'store:product_list' %}">Продолжить покупки</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+    <h2>Профиль пользователя</h2>
+    <p>Имя: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+{% endblock %}

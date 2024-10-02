@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+    <h2>Товары</h2>
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>Цена: {{ product.price }} сом</p>
+                <a href="{% url 'store:add_to_cart' product.id %}">Добавить в корзину</a>
+                <a href="{% url 'store:product_detail' product.id %}">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block title %}Товары в категории {{ category.name }}{% endblock %}
+
+{% block content %}
+<h1>Товары в категории {{ category.name }}</h1>
+
+<div class="products-container">
+    {% for product in products %}
+        <div class="product">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'img/no-image.png' %}" alt="Нет изображения">
+            {% endif %}
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.price }} сом</p>
+        </div>
+    {% empty %}
+        <p>Нет товаров в этой категории.</p>
+    {% endfor %}
+</div>
+{% endblock %}

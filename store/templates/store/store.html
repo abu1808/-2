@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Магазин товаров</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'profile' %}">Профиль</a>
+        <a href="{% url 'cart' %}">Корзина</a>
+        <a href="{% url 'logout' %}">Выйти</a>
+    </nav>
+
+    <div class="products-container">
+        <div class="product-card">
+            <img src="{% static 'img/product1.jpg' %}" alt="Продукт 1">
+            <h2>Продукт 1</h2>
+            <p>Описание продукта</p>
+            <span class="price">$100</span>
+            <button>Купить</button>
+        </div>
+        <!-- Другие товары -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ваш интернет-магазин</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+    <h2>Добро пожаловать в наш интернет-магазин!</h2>
+    <p><a href="{% url 'store:product_list' %}">Просмотреть товары</a></p>  <!-- Обратите внимание на 'store:' -->
+{% endblock %}
